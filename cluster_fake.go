@@ -4,10 +4,6 @@ import (
     "strconv"
 )
 
-type Node struct {
-    id string
-}
-
 type Cluster struct {
     nodes [10]Node
 }
@@ -15,7 +11,7 @@ type Cluster struct {
 func NewCluster(nbNodes int) *Cluster {
     c := new(Cluster)
     for i := 0; i < nbNodes; i++ {
-        c.nodes[i] = Node{"node " + strconv.Itoa(i)}
+        c.nodes[i] = Node{"node " + strconv.Itoa(i), StateFollower}
     }
     return c
 }
