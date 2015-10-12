@@ -5,17 +5,18 @@ import (
 )
 
 type cluster struct {
-    nodes [10]Node
+    nodes []Node
 }
 
 func NewCluster(nbNodes int) *cluster {
     c := new(cluster)
+    c.nodes = make([]Node, nbNodes)
     for i := 0; i < nbNodes; i++ {
         c.nodes[i] = Node{"node " + strconv.Itoa(i), StateFollower}
     }
     return c
 }
 
-func (c *cluster) Nodes() [10]Node {
+func (c *cluster) Nodes() []Node {
     return c.nodes
 }

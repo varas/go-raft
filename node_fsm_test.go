@@ -5,7 +5,7 @@ import (
     "fmt"
 )
 
-var nodes [10]Node
+var nodes []Node
 
 func TestMain(m *testing.T){
     cluster := NewCluster(10)
