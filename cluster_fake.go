@@ -4,18 +4,18 @@ import (
     "strconv"
 )
 
-type Cluster struct {
+type cluster struct {
     nodes [10]Node
 }
 
-func NewCluster(nbNodes int) *Cluster {
-    c := new(Cluster)
+func NewCluster(nbNodes int) *cluster {
+    c := new(cluster)
     for i := 0; i < nbNodes; i++ {
         c.nodes[i] = Node{"node " + strconv.Itoa(i), StateFollower}
     }
     return c
 }
 
-func (c *Cluster) Nodes() [10]Node {
+func (c *cluster) Nodes() [10]Node {
     return c.nodes
 }
