@@ -26,7 +26,7 @@ func TestAllNodesStartAsFollowers(t *testing.T){
         if (err != nil) {
             t.Errorf("error recovering state of node ", node)
         }
-        if (state != StateFollower) {
+        if (state != Follower) {
             t.Errorf("state of node is not Follower: ", state)
         }
     }

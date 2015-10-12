@@ -12,7 +12,7 @@ func NewCluster(nbNodes int) *cluster {
     c := new(cluster)
     c.nodes = make([]Node, nbNodes)
     for i := 0; i < nbNodes; i++ {
-        c.nodes[i] = Node{"node " + strconv.Itoa(i), StateFollower}
+        c.nodes[i] = Node{"node " + strconv.Itoa(i), Follower}
     }
     return c
 }
