@@ -5,10 +5,12 @@ import (
     "fmt"
 )
 
+const NbNodes = 10
+
 var nodes []Node
 
 func TestMain(m *testing.T){
-    cluster := NewCluster(10)
+    cluster := NewCluster(NbNodes)
     nodes = cluster.Nodes()
 
     fmt.Println("nodes: ", nodes)
