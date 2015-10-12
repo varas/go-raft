@@ -23,6 +23,6 @@ type Node struct {
     state State
 }
 
-func (n *Node) State() (State, error) {
-    return n.state, nil
+func (n *Node) State() (State) {
+    return n.state
 }

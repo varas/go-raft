@@ -22,10 +22,7 @@ func TestMain(m *testing.T){
 func TestAllNodesStartAsFollowers(t *testing.T){
     for _, node := range nodes {
 
-        state, err := node.State()
-        if (err != nil) {
-            t.Errorf("error recovering state of node ", node)
-        }
+        state := node.State()
         if (state != Follower) {
             t.Errorf("state of node is not Follower: ", state)
         }
