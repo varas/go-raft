@@ -7,16 +7,15 @@ const (
     Candidate
     Leader
 )
+
+var states = [...]string {
+    "follower",
+    "candidate",
+    "leader",
+}
+
 func (state State) String() string {
-    switch state {
-    case Follower:
-        return "follower"
-    case Candidate:
-        return "candidate"
-    case Leader:
-        return "leader"
-    }
-    return "unknown-state"
+    return states[state -1]
 }
 
 type Node struct {
